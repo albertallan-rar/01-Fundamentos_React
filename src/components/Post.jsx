@@ -2,24 +2,40 @@ import styles from "./Post.module.css";
 
 export function Post() {
   return (
-    <article className={styles.post}>
-      <header>
-        <div className={styles.header_post}>
-          <img src="./user_post_picture.jpg" />
-          <div className={styles.info_user}>
-            <h1>Alexandre</h1>
-            <p>Web Developer</p>
+    <>
+      <article className={styles.post}>
+        <header>
+          <div className={styles.author}>
+            <img className={styles.avatar} src="./user_post_picture.jpg" />
+            <div className={styles.authorInfo}>
+              <strong>Alexandre</strong>
+              <span>Web Developer</span>
+            </div>
           </div>
+          <time title="8 de maio de 2024" dateTime="2024-05-08 22:11:28">
+            Publicado há 1h
+          </time>
+        </header>
+        <div className={styles.content}>
+          <p>Fala galeraa 👋 </p>
+          <p>
+            Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O
+            nome do projeto é DoctorCare 🚀
+          </p>
+          <a href="#">👉 jane.design/doctorcare</a>
+          <a href="">#novoprojeto</a>
+          <a href="">#nlw</a>
+          <a href="">#rocketseat</a>
         </div>
-        <span>Publicado há 1h</span>
-      </header>
-      <div className={styles.post_content}>
-        <h1>Post de </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut maiores eius eligendi nemo adipisci tenetur qui
-          animi tempora laboriosam fugit aspernatur error, iste autem fugiat voluptatibus, et repellat culpa delectus.
-        </p>
-      </div>
-    </article>
+        <form className={styles.commentForm}>
+          <strong>Deixe seu feedback</strong>
+          <textarea placeholder="Deixe um comentário" />
+          <footer>
+            {" "}
+            <button type="submit">Comentar</button>
+          </footer>
+        </form>
+      </article>
+    </>
   );
 }
