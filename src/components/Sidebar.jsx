@@ -1,4 +1,5 @@
 import { Pencil } from "lucide-react";
+import { Avatar } from "./Avatar";
 import styles from "./Sidebar.module.css";
 
 export function Sidebar({}) {
@@ -6,7 +7,7 @@ export function Sidebar({}) {
     <aside className={styles.sidebar}>
       <img className={styles.cover} src="./cover_perfil.jpg" />
       <div className={styles.profile}>
-        <img className={styles.avatar} src="./profile_picture.jpg" />
+        <Avatar hasBorder src={"./profile_picture.jpg"} />
 
         <strong>Albert Allan</strong>
         <span>Web Developer</span>
