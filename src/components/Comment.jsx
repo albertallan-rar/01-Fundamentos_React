@@ -1,12 +1,20 @@
-import { ThumbsUp, Trash } from "lucide-react";
+import { PartyPopper, Trash } from "lucide-react";
+import { useState } from "react";
 import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 
 export function Comment({ comments, deleteComment }) {
+  const [likeCount, setLikeCount] = useState(0);
   function handleDeleteComment() {
     console.log("deletar");
 
     deleteComment(comments);
+  }
+
+  function handleCommentLike() {
+    setLikeCount((likeNumber) => {
+      return likeNumber + 1;
+    });
   }
   return (
     <div className={styles.comment}>
@@ -29,8 +37,8 @@ export function Comment({ comments, deleteComment }) {
           <p>{comments}</p>
         </div>
         <footer>
-          <button>
-            <ThumbsUp size={20} /> Aplaudir <span>20</span>
+          <button onClick={handleCommentLike}>
+            <PartyPopper size={20} /> Aplaudir <span>{likeCount}</span>
           </button>
         </footer>
       </div>
